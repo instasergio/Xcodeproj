@@ -276,7 +276,7 @@ module Xcodeproj
       }.freeze,
       [:watchos, :framework] => {
         'APPLICATION_EXTENSION_API_ONLY'    => 'YES',
-        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited), '@executable_path/Frameworks', '@loader_path/Frameworks'],
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited)', '@executable_path/Frameworks', '@loader_path/Frameworks'],
         'TARGETED_DEVICE_FAMILY'            => '4',
       }.freeze,
       [:tvos, :framework] => {
@@ -316,7 +316,7 @@ module Xcodeproj
         'ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME'  => 'AccentColor',
       }.freeze,
       [:ios, :application] => {
-        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited), @executable_path/Frameworks'],
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited)', '@executable_path/Frameworks'],
         'TARGETED_DEVICE_FAMILY'            => '1,2',
       }.freeze,
       [:osx, :application] => {
