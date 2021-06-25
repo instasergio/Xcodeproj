@@ -267,20 +267,20 @@ module Xcodeproj
         'VERSIONING_SYSTEM'                 => 'apple-generic',
       }.freeze,
       [:ios, :framework] => {
-        'LD_RUNPATH_SEARCH_PATHS'           => '$(inherited) @executable_path/Frameworks @loader_path/Frameworks',
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited)', '@executable_path/Frameworks', '@loader_path/Frameworks'],
         'TARGETED_DEVICE_FAMILY'            => '1,2',
       }.freeze,
       [:osx, :framework] => {
         'COMBINE_HIDPI_IMAGES'              => 'YES',
-        'LD_RUNPATH_SEARCH_PATHS'           => '$(inherited) @executable_path/../Frameworks @loader_path/Frameworks',
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited)', '@executable_path/../Frameworks', '@loader_path/Frameworks'],
       }.freeze,
       [:watchos, :framework] => {
         'APPLICATION_EXTENSION_API_ONLY'    => 'YES',
-        'LD_RUNPATH_SEARCH_PATHS'           => '$(inherited) @executable_path/Frameworks @loader_path/Frameworks',
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited), '@executable_path/Frameworks', '@loader_path/Frameworks'],
         'TARGETED_DEVICE_FAMILY'            => '4',
       }.freeze,
       [:tvos, :framework] => {
-        'LD_RUNPATH_SEARCH_PATHS'           => '$(inherited) @executable_path/Frameworks @loader_path/Frameworks',
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited)', '@executable_path/Frameworks', '@loader_path/Frameworks'],
         'TARGETED_DEVICE_FAMILY'            => '3',
       }.freeze,
       [:framework, :swift] => {
@@ -316,12 +316,12 @@ module Xcodeproj
         'ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME'  => 'AccentColor',
       }.freeze,
       [:ios, :application] => {
-        'LD_RUNPATH_SEARCH_PATHS'           => '$(inherited) @executable_path/Frameworks',
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited), @executable_path/Frameworks'],
         'TARGETED_DEVICE_FAMILY'            => '1,2',
       }.freeze,
       [:osx, :application] => {
         'COMBINE_HIDPI_IMAGES'              => 'YES',
-        'LD_RUNPATH_SEARCH_PATHS'           => '$(inherited) @executable_path/../Frameworks',
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited)', '@executable_path/../Frameworks'],
       }.freeze,
       [:watchos, :application] => {
         'SKIP_INSTALL'                      => 'YES',
@@ -329,7 +329,7 @@ module Xcodeproj
       }.freeze,
       [:tvos, :application] => {
         'ASSETCATALOG_COMPILER_APPICON_NAME' => 'App Icon & Top Shelf Image',
-        'LD_RUNPATH_SEARCH_PATHS'           => '$(inherited) @executable_path/Frameworks',
+        'LD_RUNPATH_SEARCH_PATHS'           => ['$(inherited)', '@executable_path/Frameworks'],
         'TARGETED_DEVICE_FAMILY'            => '3',
       }.freeze,
       [:tvos, :application, :swift] => {
